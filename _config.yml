@@ -45,3 +45,5 @@ author:
 version: 1.3.0
 github:
   repo: https://github.com/essentialenemy/noir
+
+highlighter: rouge
