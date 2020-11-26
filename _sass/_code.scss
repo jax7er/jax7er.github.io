@@ -16,7 +16,14 @@
 }
 
 a code {
+    border-radius: 5px;
     text-decoration: underline;
+    
+    &:hover {
+      text-decoration: none;
+      color: $body-bg-dark;
+      background-color: $dark;
+    }
 }
 
 /* Applies to all code */
@@ -49,7 +56,7 @@ pre, code {
 
 /* Inline code, no highlight */
 code {
-    padding: 2px 4px;
+    padding: 2px 2px;
     border-radius: 3px;
 
     white-space: nowrap;
