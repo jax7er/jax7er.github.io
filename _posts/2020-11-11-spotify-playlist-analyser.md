@@ -587,3 +587,75 @@ def value():
         return redirect("/value")
 ```
 
+## App flow
+
+![HTTP methods](/assets/spotify-playlist-analyser-http-methods-flow.png)
+
+![Button presses](/assets/spotify-playlist-analyser-button-presses-flow.png)
+
+![Logical redirects](/assets/spotify-playlist-analyser-logical-redirects-flow.png)
+
+# Heroku
+
+With all the parts of the web app complete and running locally, it can now be hosted on Heroku for accessibility by anyone with an internet connection. Heroku offers a variety of ways to deploy an app, but this project focuses on the GitHub method as it doesn’t require installation of the Heroku CLI.
+
+## Files
+
+To prepare the app for deployment, a few modifications need to be made to the project. First, in the main `app.py` file, the line:
+
+```python
+app.run(debug=True)
+```
+
+Needs to be changed to:
+
+```python
+app.run(host=”0.0.0.0″)
+```
+
+This disables the debug mode (the `debug` flag defaults to `False`) and makes the app listen to requests received externally by setting the host argument to `"0.0.0.0"`.
+
+Next, in order for Heroku to automatically recognise the web app as being written in Python, a `requirements.txt` file needs to be created with a list of all the project dependencies. The `pip freeze` command can generate this for us and the result can be stored directly in the file. Run the following command in the same directory as `app.py`:
+
+```powershell
+pip freeze > requirements.txt
+```
+
+Finally, a file required by Heroku called a Procfile needs to be created. The contents of this describes the commands executed by Heroku to start the app. In the case of this project, it is a single line that starts a Gunicorn web server. Run the following command in the same directory as `app.py` to create the Procfile (notice it has no extension):
+
+```powershell
+echo “web: gunicorn app:app” > Procfile
+```
+
+The directory tree looks like the following when ready to be deployed:
+
+```
+app.py
+Procfile
+requirements.txt
+static/
+├─ favicon.ico
+├─ loading.gif
+└─ main.css
+templates/
+├─ analysis.html
+├─ async.html
+├─ base.html
+├─ index.html
+└─ playlists.html
+```
+
+With all the files prepared, commit and push them to a Git repository (this requires a
+[GitHub account](https://github.com/join)).
+
+## App
+
+A
+[Heroku account](https://signup.heroku.com/)
+is required to host an app. Once logged in a new app needs to be created via the `“New” > “Create new app”` menu button and a name and region specified. This project uses the GitHub method with Manual Deployment. Select `“GitHub”` in the `“Deployment method”` section, connect your GitHub account, and select the repo containing the web app files that should already have been pushed. Under the `“Manual deploy”` section, select the corresponding branch. The default value of `“master”` or `“main”` is likely to be correct if you’ve only created a single branch. Click `“Deploy Branch”` and wait for the process to finish.
+
+The app uses some environmental variables to store the Spotify credentials and in Heroku-speak these are called
+[Config Vars](https://devcenter.heroku.com/articles/config-vars).
+Return to the top of the page and click on the `“Settings”` tab. Under the `“Config Vars”` section click `“Reveal Config Vars”`. For each environment variable, enter the key and value and then click `“Add”`. In the case of this app, the keys are `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET`.
+
+If the deployment was successful, the app should now be running! Return to the top of the page and click on the `“Open app”` button to see the app in action.
