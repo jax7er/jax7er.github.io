@@ -17,12 +17,19 @@
   text-align: center;
   padding-right: 12px;
   
-@media (prefers-color-scheme: dark) {
-  color: $body-color-dark;
+  @media (prefers-color-scheme: dark) {
+    color: $body-color-dark;
   }
 
   a {
     color: inherit;
+
+    &:hover {
+      color: $body-bg;
+      @media (prefers-color-scheme: dark) {
+        color: $body-bg-dark;
+      }
+    }
   }
 
   small {
@@ -38,8 +45,8 @@
   font-weight: 500;
   color: $body-color;
   
-@media (prefers-color-scheme: dark) {
-  color: $body-color-dark;
+  @media (prefers-color-scheme: dark) {
+    color: $body-color-dark;
   }
   
 ul#navigation-list {

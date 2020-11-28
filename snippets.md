@@ -216,12 +216,12 @@ interleaved = filter(None, chain(*zip_longest(list1, list2)))
 ```
 
 # Jinja2
-{% raw %}
 
 ### Join iterable of strings with line breaks
 
 Use the `join` filter with a line break with the `safe` filter applied
 
+{% raw %}
 ```jinja
 {{ iterable|join("<br>"|safe) }}
  
@@ -230,9 +230,9 @@ Use the `join` filter with a line break with the `safe` filter applied
   generates: 1<br>2<br>3
 -->
 ```
-
 {% endraw %}
-# HTML/JavaScript
+
+<h1 id="htmljs">HTML+JavaScript</h1>
 
 ### Auto-redirect to another URL
 
