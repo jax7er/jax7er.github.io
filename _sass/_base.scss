@@ -23,11 +23,11 @@ html {
 }
 
 body {
-  color: $body-color;
-  background-color: $body-bg;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 	  
+  color: $body-color;
+  background-color: $body-bg;
   @media (prefers-color-scheme: dark) {
     color: $body-color-dark;
     background-color: $body-bg-dark;
@@ -36,26 +36,29 @@ body {
 
 // No `:visited` state is required by default (browsers will use `a`)
 a {
-  color: $light;
+  padding: 2px 2px;
+  border-radius: 5px;
   text-decoration: underline;
 
+  color: $light;  
+  @media (prefers-color-scheme: dark) {
+    color: $dark;
+  }
+
   // `:focus` is linked to `:hover` for basic accessibility
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: none;
-    color: $light;
     
+    color: $body-bg;
+    background-color: $light;
     @media (prefers-color-scheme: dark) {
-      color: $dark;
-      }
+      color: $body-bg-dark;
+      background-color: $dark;
+    }
   }
 
   strong {
     color: inherit;
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    color: $dark;
   }
 }
 

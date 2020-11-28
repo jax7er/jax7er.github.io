@@ -563,8 +563,8 @@ app.secret_key = b"\xe8n\xd0\xb1M<\x19zI\xd9\x1a[\xef\x8e\xa9\x1c"
 ```
 
 The API exposes the session cookie as a dictionary-like object,
-[`flask.session`](https://flask.palletsprojects.com/en/1.1.x/api/#flask.session)
-. To set some data in the session cookie, assign a value to a key, just like a regular dictionary. To retrieve a value, index the object with a key or use the `session.get()` method, which allows for a default value in the case the key doesn’t exist, just like a regular dictionary.
+[`flask.session`](https://flask.palletsprojects.com/en/1.1.x/api/#flask.session).
+To set some data in the session cookie, assign a value to a key, just like a regular dictionary. To retrieve a value, index the object with a key or use the `session.get()` method, which allows for a default value in the case the key doesn’t exist, just like a regular dictionary.
 
 The following example page at `/value` displays a form with a textbox and submit button that creates a key in the session cookie called `"key"` with a value of whatever was typed in the textbox. When the form submits a POST request to the server, the value in the session cookie is set and then the page redirects to itself, which sends a GET request to the server. The new value is retrieved from the session cookie and displayed before the form, showing the value is preserved between the two requests.
 
