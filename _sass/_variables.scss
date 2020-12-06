@@ -1,29 +1,47 @@
 // Color scheme for light and dark modes.
-
-$light: #ff0066;
+// $light: #ff0066;
 $dark: #1ba77e;
-
 // Highlighting color for code block borders and language name.
-
-$code-light: #ff0066;
+// $code-light: #ff0066;
 $code-dark: #67b99a; //#d0f6db;
-
+// messages
 $message-green: #62bb47;
 $message-yellow: #fcb827;
 $message-orange: #f6821f;
 $message-red: #e03940;
 $message-purple: #953c96;
 $message-blue: #009ddc;
-
-$root-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$code-font-family: "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// fonts
+$root-font-family: "Lato",
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji" !default;
+$code-font-family: "Fira Code",
+SFMono-Regular,
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
+$code-font-weight: 300;
 $root-font-size: 16px;
+$root-font-weight: 300; // light (100, 300, 400, 700, 900)
 $root-line-height: 1.5;
-
-$body-color: hsl(0,0,5%); //rgba(0,0,0,.8);
-$body-bg: hsl(0,0,95%); //rgba(0,0,0,.03);
-$body-color-dark: $body-bg; //hsla(0,0%,100%,.8);
-$body-bg-dark: $body-color; //rgba(0,0,0,.9);
-
+// body colours
+// $body-color: hsl(0, 0, 5%); //rgba(0,0,0,.8);
+// $body-bg: hsl(0, 0, 95%); //rgba(0,0,0,.03);
+$body-color-dark: hsl(0, 0, 95%); //hsla(0,0%,100%,.8);
+$body-bg-dark: hsl(0, 0, 5%); //rgba(0,0,0,.9);
+// large
 $large-breakpoint: 38em;
 $large-font-size: 20px;
