@@ -123,7 +123,7 @@ date|stars|is employed|is technical|recommends|outlook|ceo opinion|years employe
 -|-|-|-|-|-|-|-|-
 `str`<br>yyyy-mm-dd|`int`<br>1 to 5|`bool`<br>0 or 1|`bool`<br>0 or 1|`bool`<br>0 or 1|`int`<br>-1 to 1|`int`<br>-1 to 1|`int`<br>≥ 0
 
-Any missing sections in the reviews are left blank in the raw data. The reviews are filtered to only include those based in the UK and who work/worked full time. In total, **372 reviews** are captured across a span of nearly **10 years**.
+Any missing sections in the reviews are left blank in the raw data. The reviews are filtered to only include those based in the UK and who work/worked full time. In total, **379 reviews** are captured across a span of nearly **10 years**.
 
 ## Load
 
