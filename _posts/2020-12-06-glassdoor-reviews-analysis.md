@@ -3,7 +3,7 @@ layout: post
 title: "Glassdoor Reviews Analysis"
 date: 2020-12-06
 categories: [project]
-tags: [collections, copy, datetime, itertools, matplotlib, numpy, pandas, scipy, data, vscode, windows]
+tags: [collections, datetime, matplotlib, numpy, pandas, scipy, data, vscode, windows]
 ---
 
 According to their website,
