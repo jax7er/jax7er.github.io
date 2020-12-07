@@ -9,13 +9,17 @@
 }
 
 .masthead-title {
+    font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 20px;
     color: $body-color-dark;
     position: relative;
     text-align: center;
     padding-right: 12px;
+    font-family: "Josefin Slab";
+    font-weight: 100;
     a {
+        text-decoration: none;
         color: inherit;
         &:hover {
             color: $body-bg-dark;
@@ -23,7 +27,7 @@
     }
     small {
         font-size: 75%;
-        font-weight: 400;
+        // font-weight: 400;
         opacity: .5;
     }
 }
@@ -31,7 +35,7 @@
 .navigation {
     display: block;
     font-size: 100%;
-    font-weight: 500;
+    font-weight: 400;
     color: $body-color-dark;
     ul#navigation-list {
         list-style: none;
@@ -44,5 +48,8 @@
         padding-left: 0;
         padding-right: 12px;
         margin: 0;
+        a {
+            text-decoration: none;
+        }
     }
 }

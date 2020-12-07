@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spotify Playlist Analyser Web App"
+title: "Spotify Playlist Analyser"
 date: 2020-11-11
 categories: [project]
 tags: [chrome, collections, css, data, flask, heroku, html, itertools, jinja, js, os, procfile, pylint, spotify, spotipy, threading, typing, venv, vscode, web-app, windows]

@@ -33,6 +33,7 @@ a {
     padding: 2px 2px;
     border-radius: 5px;
     text-decoration: underline;
+    font-weight: 400;
     color: $dark;
     // `:focus` is linked to `:hover` for basic accessibility
     &:hover {
