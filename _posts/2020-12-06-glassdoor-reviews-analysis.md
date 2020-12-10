@@ -615,7 +615,7 @@ Disapprove CEO 3|133|![ok] 48%|![ok] 49%|![ok] 45%|![ok] 57%|![good] 28%
 
 ![Timeline plot](/assets/glassdoor-analysis-plot-timeline-inverted.png)
 
-The most striking thing about the timeline plot is the ramp up in review frequency in the latter half of 2020. Up to "Bad press 1" there is a rough monthly average of 12 reviews. After this point, the frequency remains above average until a spike to around 3 times the monthly average that lines up with "Job cuts". Meanwhile, the general trend of CEO opinion is downward with a majority of people disapproving. Just after "Lockdown 2", a new monthly record for review frequency is set with every metric plummeting.
+The most striking thing about the timeline plot is the ramp up in review frequency in the latter half of 2020. Up to "Bad press 1" there is a rough monthly average of 4 reviews. After this point, the frequency remains above average until a spike to ~4 times the monthly average that lines up with "Job cuts". Meanwhile, the general trend of CEO opinion is downward with a majority of people disapproving. Just after "Lockdown 2", a new monthly record for review frequency is set with every metric plummeting.
 
 ## Conclusion
 
