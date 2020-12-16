@@ -39,7 +39,7 @@ def dialog():
 
 ```python
 >>> with dialog() as d:
-...     path = d.askfilename()
+...     folder = d.askdirectory()
 ...
 ```
 
@@ -103,9 +103,11 @@ with open(file_name) as file:
 >>> with open("test.csv", "w") as file:
 ...     file.write("t,e,s,t\n1,2,3,4\n5,6,7,8\n")
 ...
+
 >>> with open("test.csv") as file:
 ...     header, *data = map(str.strip, file)
 ...
+
 >>> header, data
 ('t,e,s,t', ['1,2,3,4', '5,6,7,8'])
 ```
@@ -139,6 +141,7 @@ most, *_, least = Counter(iterable).most_common()
 
 ```python
 >>> most, *_, least = Counter("abbccc").most_common()
+
 >>> most, least 
 (('c', 3), ('a', 1))
 ```
@@ -147,19 +150,25 @@ most, *_, least = Counter(iterable).most_common()
 
 Store the result of `f(x)` in a list and use a 2nd for loop
 
+> Python 3.8+: use the assignment operator `:=`
+
 ```python
 ys = [y for x in iterable for y in [f(x)] if y]
  
-# Python 3.8+, use the assignment operator
+# Python 3.8+
 ys = [y for x in iterable if (y := f(x))]
 ```
 
 ### Example
 
 ```python
->>> f = lambda x: x > 5
+>>> def f(x):
+...     return x > 5
+...
+
 >>> [y for x in range(10) for y in [f(x)] if y]
 [6, 7, 8, 9]
+
 >>> # Python 3.8+
 ... [y for x in range(10) if (y := f(x))]
 [6, 7, 8, 9]
@@ -185,14 +194,15 @@ no_suffix = text.removesuffix(suf)
 ```python
 >>> text = "id_1.txt"
 >>> pre, suf = "id_", ".txt"
+
 >>> text[len(pre) if text.startswith(pre) else None:]
-'1.txt'
->>> # Python 3.9+
-... text.removeprefix(pre)
 '1.txt'
 >>> text[:-len(suf) if text.endswith(suf) else None]
 'id_1'
+
 >>> # Python 3.9+
+... text.removeprefix(pre)
+'1.txt'
 ... text.removesuffix(suf))
 'id_1'
 ```
@@ -213,10 +223,11 @@ merged = dict1 | dict2
 ### Example
 
 ```python
->>> {**{"a": 1, "b": 2}, **{"b": 3, "c": 4}}
+>>> {**dict(a=1, b=2), **dict(b=3, d=4)}
 {"a": 1, "b": 3, "c": 4}
+
 >>> # Python 3.9+
-... {"a": 1, "b": 2} | {"b": 3, "c": 4}
+... dict(a=1, b=2) | dict(b=3, d=4)
 {"a": 1, "b": 3, "c": 4}
 ```
 
@@ -239,6 +250,7 @@ print(f"{x=}")
 >>> x = "test"
 >>> print(f"x={x!r}")
 x='test'
+
 >>> # Python 3.8+
 ... print(f"{x=}")
 x='test'
@@ -264,6 +276,7 @@ date_obj = datetime.fromisoformat(date_str)
 ```python
 >>> datetime(*map(int, "2020-12-25".split("-")))
 datetime.datetime(2020, 12, 25, 0, 0)
+
 >>> # Python 3.7+
 ... datetime.fromisoformat("2020-12-25")
 datetime.datetime(2020, 12, 25, 0, 0)
@@ -285,44 +298,59 @@ flat = chain(*it_of_its)
 [0, 1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
-## Interleave two lists with any number of elements
+## Interleave iterables with any number of elements
 
-Create `zip_longest` object, unpack into `chain` constructor, `filter` `None` values
+Create a unique object representing a missing value, unpack the iterables into the `itertools.zip_longest` constructor specifying the `fillvalue` argument, unpack into the `itertools.chain` constructor, and filter the values with an address equal to that of the missing value
 
 ```python
 from itertools import zip_longest, chain
 
-interleaved = filter(None, chain(*zip_longest(list1, list2)))
+MISSING = object()
+
+interleaved = (
+    x for x in chain(*zip_longest(*its, fillvalue=MISSING))
+    if x is not MISSING
+)
 ```
 
 ### Example
 
 ```python
->>> a, b = [1, 2, 3], [4, 5, 6, 7, 8]
->>> list(filter(None, chain(*zip_longest(a, b))))
-[1, 4, 2, 5, 3, 6, 7, 8]
+>>> its = ((1, 2, 3), (4,), (5, 6, 7, 8), (9, 10))
+
+>>> list(
+...     x for x in chain(*zip_longest(*its, fillvalue=MISSING))
+...     if x is not MISSING
+... )
+[1, 4, 5, 9, 2, 6, 10, 3, 7, 8]
 ```
 
 # Jinja2
 
-### Join iterable of strings with line breaks
+## Join iterable of strings with line breaks
 
 Use the `join` filter with a line break with the `safe` filter applied
 
 {% raw %}
 ```jinja
 {{ iterable|join("<br>"|safe) }}
- 
-<!-- Example
-  where: iterable = [1, 2, 3]
-  generates: 1<br>2<br>3
--->
+```
+{% endraw %}
+
+### Example
+
+{% raw %}
+```jinja
+{{ [1, 2, 3]|join("<br>"|safe) }}
+
+<!-- HTML output -->
+1<br>2<br>3
 ```
 {% endraw %}
 
 <h1 id="htmljs">HTML+JavaScript</h1>
 
-### Auto-redirect to another URL
+## Auto-redirect to another URL
 
 Use `window.location.replace` which also removes current page from history
 
@@ -330,9 +358,15 @@ Use `window.location.replace` which also removes current page from history
 <script>
     window.location.replace(url)
 </script>
- 
-<!-- Example
-  where: url = "/results"
-  redirects to: .../results
--->
+```
+
+### Example
+
+```html
+<script>
+    window.location.replace("jax7er.github.io")
+</script>
+
+<!-- Redirects to -->
+jax7er.github.io
 ```
