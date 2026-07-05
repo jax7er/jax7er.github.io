@@ -22,19 +22,45 @@
         max-width: min(80%, 650px);
       }
       a {
-        color: cyan;
-        text-decoration: none;
+        text-decoration: underline cyan;
       }
       a:hover {
-        filter: saturate(200%) blur(1px);
+        text-decoration: wavy underline cyan;
       }
       a img:hover {
-        filter: saturate(200%) blur(2px);
+        text-decoration: none;
+        filter: saturate(200%) blur(1px);
       }
-      h1, h2 {
+      h1 {
         font-family: 'Playfair Display', 'Times New Roman', Times, serif;
         text-align: center;
         color: white;
+      }
+      JM {
+        font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+        font-size: 220%;
+        font-weight: 500;
+        vertical-align: -14%;
+      }
+      ackehmet {
+        font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+        text-decoration: wavy underline cyan;
+        font-size: 150%;
+        font-weight: 600;
+      }
+      h2 {
+        text-decoration: wavy underline cyan;
+        font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+        font-weight: 200;
+        text-align: center;
+        color: white;
+      }
+      wavy {
+        text-decoration: wavy underline cyan;
+      }
+      emphasise {
+        color: cyan;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -43,18 +69,60 @@
     <br>
 
     <h1>
-      Jack Mehmet
+      <JM>J</JM><ackehmet>ack</ackehmet> <JM>M</JM><ackehmet>ehmet</ackehmet>
     </h1>
+
     <p>
-      4+ years of industry experience at companies with 10s to 1,000s of employees, combined with deep-rooted care for my work and colleagues makes me an engaged and productive member of any team.
-      I love using technical knowledge to solve problems and want this to be the driving force behind my professional progression.
-      My ideal working culture nurtures continuous personal development, technical exploration and cross-team collaboration.
-      I take a moderate stance on “technical debt”, striving to find the balance between upfront design/failing fast and iteration/waste.
+      "Curious, focussed, and compassionate" is how my friends describe me.
+      The virtue I value most is integrity; owning failure and seeking to use it as a mechanism for positive change.
+      I relish a logical challenge or thought provoking debate and strive to engage with the present moment.
+    </p>
+    <p>
+      Over <emphasise>7 years of experience</emphasise> at companies of various sizes, combined with deep-rooted care for my work and colleagues makes me an engaged and productive member of a team.
+      I love using knowledge as a tool to solve meaningful problems and enjoy putting theory into practice.
+      My ideal working culture nurtures continuous personal development and cross-team collaboration.
+    </p>
+
+    <h2>
+      Experience
+    </h2>    
+
+    <p style="text-align: center">
+      <a href="https://www.alexandertechnologies.com/">
+        <img src="assets/abt.svg" style="height: 45px" alt="Alexander Battery Technologies">
+      </a>      
+    </p>
+    <p style="text-align: center">
+      <b>Firmware Engineer</b>: <i>since 2023</i>
+    </p>
+    <p>
+      <ul>
+        <li>
+          Co-founded the company's first in-house firmware team.
+        </li>
+        <li>
+          Own firmware deliverables from customer requirements to production.
+        </li>
+        <li>
+          Working daily with C++, Python, VSCode, GitLab, and STM32.
+        </li>
+      </ul>
+    </p>
+    <p>
+      Joining ABT as one of the first in-house firmware engineers gave me a unique opportunity to shape the daily running of the department.
+      We were tasked with defining the future of the firmware platform at the company to accommodate bigger, more complex projects and our choices then allow us to support a wide range of products with varied requirements today.
+      A key takeaway from that process was the importance of the quality of collaboration with suppliers.
+    </p>
+    <p>
+      A significant contribution I have made so far is to our proprietry library of reusable firmware modules. Having had reusability as one of our team's core principles from day one has allowed us to incrementally build this valueable resource as new project work has driven us to use different MCU peripherals and external ICs. With this mindset, maintaining useful documentation, explaining <b>why</b> something is a certain way rather than just stating what it does, has also been a priority and become as natural as writing the code itself.
+    </p>
+    <p>
+      I was the firmware owner for the first project that ABT embarked on under a new NPI process that was to be rolled out across the company for the future. I was at the table at the first engineering meeting with the customer, have written the majority of the code, and will be supporting the product through to mass manufacture. This experience has been highly valueable in improving my communication from working with multiple other teams, my ability to generate meaningful requirements through conversations directly with the customer, and my creativity navigating unexpected issues.
     </p>
 
     <p style="text-align: center">
       <a href="https://www.mytos.bio/">
-        <img src="assets/mytos.png" style="height: 50px" alt="Mytos">
+        <img src="assets/mytos.png" style="height: 45px" alt="Mytos">
       </a>      
     </p>
     <p style="text-align: center">
@@ -93,7 +161,7 @@
       </a>      
     </p>
     <p style="text-align: center;">
-      <b>Embedded Engineer</b>: <i>2021-2023</i>
+      <b>Embedded Engineer</b>: <i>2021 to 2023</i>
     </p>
     <p>
       <ul>
@@ -107,11 +175,6 @@
           Strengthened skills across hardware, PCBs, firmware, and Linux.
         </li>
       </ul>
-    </p>
-    <p>
-      Having joined AFC Energy during a period of rapid growth, there were ample opportunities to develop my skills.
-      I worked on the requirements capture, schematic, and PCB design of the company's first prototype of a fully embedded controller, complete with high-speed USB, Ethernet, and multiple communications buses, which provided the foundations for the future versions used in deployments.
-      This also involved owning the PCB component migration process from local disparate libraries to Altium 365.
     </p>
     <p>
       An important contribution I made was a Linux-based remote monitoring system.
@@ -131,7 +194,9 @@
       </a>      
     </p>
     <p style="text-align: center;">
-      <b>Sensors Engineer</b>: <i>2019-2021</i> ⋯ <b>Graduate Engineer</b>: <i>2018-2019</i>
+      <b>Sensors Engineer</b>: <i>2019 to 2021</i>
+      <br>
+      <b>Graduate Engineer</b>: <i>2018 to 2019</i>
     </p>
     <p>
       <ul>
@@ -158,57 +223,73 @@
     </p>
 
     <p style="text-align: center">
+      <a href=https://en.wikipedia.org/wiki/Marconi_Research_Centre">
+        <img src="assets/bae.png" style="height: 25px" alt="BAE Systems Applied Intelligence Labs">
+      </a>
+      <br>
+      Applied Intelligence Labs
+    </p>
+    <p style="text-align: center;">
+      <b>Junior Research Engineer</b>: <i>2015</i> 
+    </p>
+    <p>
+      I completed a year's engineering placement at BAE Systems, during which I mentored a team at a local girls school with their Engineering Education Scheme entry.
+    </p>
+
+    <h2>
+      Education
+    </h2>   
+
+    <p style="text-align: center">
       <a href="https://www.york.ac.uk/">
-        <img src="assets/university-of-york.png" style="height: 50px" alt="University of York">
+        <img src="assets/university-of-york.png" style="height: 60px" alt="University of York">
       </a>      
     </p>
     <p style="text-align: center;">
-      <b>MEng Electronics</b>: <i>2013-2018</i> ⋯ <b>Industrial Placement</b>: <i>2015</i> 
+      <b>MEng Electronics</b>: <i>2013 to 2018</i>
     </p>
     <p>
-      Achieved a <b>1st</b> in every module of every year.
+      Achieved a <emphasise>1st</emphasise> in every module of every year.
       Studies included analogue and digital electronics, and programming in C, Java, and MATLAB.
-      I completed a year's engineering placement at BAE Systems, during which I mentored a team at a local girls school with their Engineering Education Scheme entry.
-    </p>  
-    <p>
       My master's project involved the end-to-end design of a device capable of wirelessly transmitting arbitrary sensor data.
       I earned the “Best Project in RF Engineering” award from my department for my efforts.
     </p>
 
-    <h2>
-      School
-    </h2>     
     <p>
-      <b>A*AA</b> in Maths, Computing, and Physics at A-Level.
-      7 <b>A*</b>s and 4 <b>A</b>s at GCSE.
+      <emphasise>A*AA</emphasise> in Maths, Computing, and Physics at A-Level.
+      7 <emphasise>A*</emphasise>s and 4 <emphasise>A</emphasise>s at GCSE.
     </p>
-    
+
     <h2>
-      Bio
-    </h2>
+      Volunteering
+    </h2>  
+
+    <p style="text-align: center">
+      <a href="https://www.volunteerhq.org/">
+        <img src="assets/ivhq.svg" style="height: 55px" alt="International Volunteer HQ">
+      </a>      
+    </p>
+    <p style="text-align: center">
+      <b>Volunteer Construction Worker</b>: <i>2023</i>
+    </p>
     <p>
-      “Curious, focussed, and compassionate” is how my friends describe me.
-      The most important virtues to me are honesty, integrity, and kindness, with a drive towards continuous improvement, professionally and personally.
-      A nerd for non-fiction, I relish a logical challenge or thought provoking debate, and always strive to engage with the present moment.
+      One month career break to give something back and mentally recalibrate.
+      Worked on two projects in schools in rural Nepal restoring a canteen and constructing a worship building.
+      The experience left me with a profound sense of humility and gratitude that I am still able to draw on.
     </p>
     
     <h2>
       Links
     </h2>
-    <p style="text-align: center;">
-      📄 <a href="https://drive.google.com/file/d/1FnJXPZN6NxhjWDxVJrBqU0I78moVzjh_/view?usp=sharing">CV</a>
-      🔗 <a href="https://www.linkedin.com/in/jackmehmet/">LinkedIn</a>
-      👨‍💻 <a href="https://github.com/jax7er">GitHub</a>
-      🐍 <a href="https://codechalleng.es/profiles/jax7er">PyBites</a>
-      🍪 <a href="https://www.pythonmorsels.com/profile/baba8bfbcf4f4a2eaa4d985ceddef191/">Python Morsels</a>
-    </p>
+    I don't have <x style="text-decoration: line-through">anti</x>social media, but you can find me on <a href="https://www.linkedin.com/in/jackmehmet/">LinkedIn</a> and 
+    <a href="https://github.com/jax7er">GitHub</a>.
 
     <p style="text-align: center;">
       References available on request.
     </p>
 
     <p style="text-align: center; color: grey;">
-      <i>Updated 2026-07-04</i>
+      <i>Updated 2026-07-05</i>
     </p>
 
     <br>
